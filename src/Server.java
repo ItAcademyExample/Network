@@ -16,7 +16,7 @@ public class Server {
       while (true) {
         System.out.println("Waiting client messages...");
         String inputClient = clientInput.readLine();
-        if ((inputClient == null)){
+        if (inputClient == null){
           break;
         } else {
           System.out.println("From Client: " +  inputClient);
@@ -28,6 +28,6 @@ public class Server {
         }
       }
     }
-    System.out.println("End program");
+  //  System.out.println("End program");
   }
 }

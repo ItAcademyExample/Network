@@ -9,19 +9,20 @@ public class Client {
 
     System.out.println("Welcome to Client side");
     System.out.println("Connecting to... " + Constant.HOST);
-    try (Socket fromServer = new Socket(Constant.HOST, Constant.PORT);
+     try (Socket fromServer = new Socket(Constant.HOST, Constant.PORT);
          BufferedReader serverInput = new BufferedReader(new InputStreamReader(fromServer.getInputStream()));
          PrintWriter serverOuput = new PrintWriter(fromServer.getOutputStream(), true);
          BufferedReader consoleInput = new BufferedReader(new InputStreamReader(System.in))) {
       while (true) {
         System.out.println("New iteration Client");
         String clientMessage = consoleInput.readLine();
-        serverOuput.println(clientMessage);
-        String serverMessage = serverInput.readLine();
-        System.out.println(serverMessage);
         if (clientMessage.equalsIgnoreCase("close") || clientMessage.equalsIgnoreCase("exit")) {
           break;
         }
+        serverOuput.println(clientMessage);
+        String serverMessage = serverInput.readLine();
+        System.out.println(serverMessage);
+
       }
     }
   }
