@@ -5,8 +5,8 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 public class Client {
-  public static void main(String[] args) throws IOException {
 
+  public static void main(String[] args) throws IOException {
     System.out.println("Welcome to Client side");
     System.out.println("Connecting to... " + Constant.HOST);
      try (Socket fromServer = new Socket(Constant.HOST, Constant.PORT);
@@ -22,7 +22,6 @@ public class Client {
         serverOuput.println(clientMessage);
         String serverMessage = serverInput.readLine();
         System.out.println(serverMessage);
-
       }
     }
   }
