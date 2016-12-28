@@ -9,7 +9,6 @@ public class Server {
 
   public static void main(String[] args) throws IOException {
     System.out.println("Welcome to Server side");
-    System.out.println("Waiting for Client...");
     try (ServerSocket servers = new ServerSocket(Constant.PORT);
          Socket fromclient = servers.accept();
          BufferedReader clientInput = new BufferedReader(new InputStreamReader(fromclient.getInputStream()));
