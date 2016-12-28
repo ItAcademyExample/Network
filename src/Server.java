@@ -13,10 +13,9 @@ public class Server {
          Socket fromclient = servers.accept();
          BufferedReader clientInput = new BufferedReader(new InputStreamReader(fromclient.getInputStream()));
          PrintWriter clientOut = new PrintWriter(fromclient.getOutputStream(), true)) {
-      String  inputClient;
       while (true) {
         System.out.println("Waiting client messages...");
-        inputClient = clientInput.readLine();
+        String inputClient = clientInput.readLine();
         if ((inputClient == null)){
           break;
         } else {
