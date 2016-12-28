@@ -47,6 +47,9 @@ public class Server {
         System.out.println("From Client: " + input);
         clientOut.println("Echo: " + input);
       }
+    } finally {
+        fromclient.close();
+        servers.close();
     }
     System.out.println("End program");
   }
